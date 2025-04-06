@@ -2,7 +2,7 @@ import { FlatList, Modal, Text, TouchableOpacity, View } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useState } from "react";
 
-import { Pais } from "../../login/login";
+import { Pais } from "../../app/login/index";
 
 interface SelectProps {
   setPais: React.Dispatch<React.SetStateAction<Pais>>;

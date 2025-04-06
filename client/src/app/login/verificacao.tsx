@@ -1,6 +1,7 @@
 import { Text, TouchableOpacity, View } from "react-native";
-import LinhaVerificacao from "./components/LinhaVerificacao";
 import { Link } from "expo-router";
+
+import LinhaVerificacao from "../../components/Login/LinhaVerificacao";
 
 const Verificacao = () => {
   return (

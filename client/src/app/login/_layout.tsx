@@ -1,11 +1,9 @@
 import { Stack } from "expo-router";
 
-import "../../styles/global.css";
-
 const Layout = () => {
   return (
     <Stack>
-      <Stack.Screen name="login" options={{ headerShown: false }} />
+      <Stack.Screen name="index" options={{ headerShown: false }} />
       <Stack.Screen
         name="verificacao"
         options={{
