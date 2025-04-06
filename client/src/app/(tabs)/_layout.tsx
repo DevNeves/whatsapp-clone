@@ -12,7 +12,7 @@ const Layout = () => {
   const TabBarIcon = (props: TabBarIconProps) => {
     return (
       <View
-        className={`w-16 h-9 flex items-center justify-center rounded-full transition delay-150 duration-300 ease-in-out  ${
+        className={`w-16 h-9 flex items-center justify-center rounded-full ${
           props.focused ? "bg-green-100" : "bg-transparent"
         }`}
       >
