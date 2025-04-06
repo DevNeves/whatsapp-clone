@@ -2,7 +2,25 @@ import { Tabs } from "expo-router";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import { View } from "react-native";
 
+type TabBarIconProps = {
+  color: string;
+  icon: keyof typeof MaterialIcons.glyphMap;
+  focused: boolean;
+};
+
 const Layout = () => {
+  const TabBarIcon = (props: TabBarIconProps) => {
+    return (
+      <View
+        className={`w-16 h-9 flex items-center justify-center rounded-full transition delay-150 duration-300 ease-in-out  ${
+          props.focused ? "bg-green-100" : "bg-transparent"
+        }`}
+      >
+        <MaterialIcons size={23} name={props.icon} color={props.color} />
+      </View>
+    );
+  };
+
   return (
     <Tabs
       screenOptions={{
@@ -14,10 +32,8 @@ const Layout = () => {
         name="index"
         options={{
           title: "Conversas",
-          tabBarIcon: ({ color }) => (
-            <View className="bg-green-100 w-16 h-9 flex items-center justify-center rounded-full ">
-              <MaterialIcons size={23} name="chat" color={color} />
-            </View>
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon color={color} icon={"chat"} focused={focused} />
           ),
         }}
       />
@@ -25,10 +41,8 @@ const Layout = () => {
         name="status"
         options={{
           title: "Status",
-          tabBarIcon: ({ color }) => (
-            <View className="bg-green-100 w-16 h-9 flex items-center justify-center rounded-full ">
-              <MaterialIcons size={23} name="post-add" color={color} />
-            </View>
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon color={color} icon={"post-add"} focused={focused} />
           ),
         }}
       />
@@ -36,10 +50,8 @@ const Layout = () => {
         name="comunidade"
         options={{
           title: "Comunidade",
-          tabBarIcon: ({ color }) => (
-            <View className="bg-green-100 w-16 h-9 flex items-center justify-center rounded-full ">
-              <MaterialIcons size={23} name="groups" color={color} />
-            </View>
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon color={color} icon={"groups"} focused={focused} />
           ),
         }}
       />
@@ -47,10 +59,8 @@ const Layout = () => {
         name="chamadas"
         options={{
           title: "Chamadas",
-          tabBarIcon: ({ color }) => (
-            <View className="bg-green-100 w-16 h-9 flex items-center justify-center rounded-full ">
-              <MaterialIcons size={23} name="phone" color={color} />
-            </View>
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon color={color} icon={"phone"} focused={focused} />
           ),
         }}
       />
