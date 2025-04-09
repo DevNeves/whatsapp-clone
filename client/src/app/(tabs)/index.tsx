@@ -11,14 +11,14 @@ const Chats = () => {
   return (
     <View className="p-5 flex flex-col justify-end">
       {/* Header */}
-      <View className="flex flex-row justify-between items-center">
+      <View className="flex flex-row justify-between items-center h-14">
         <Text className="text-green-400 font-bold text-4xl">Whatsapp</Text>
         <View className="flex flex-row gap-8">
           <TouchableOpacity>
-            <Icon name="camera-alt" size={30} />
+            <Icon name="camera-alt" size={26} />
           </TouchableOpacity>
           <TouchableOpacity>
-            <Icon name="more-vert" size={30} />
+            <Icon name="more-vert" size={26} />
           </TouchableOpacity>
         </View>
       </View>
@@ -63,7 +63,7 @@ const Chats = () => {
       {/* Chats */}
       <ScrollView className="mt-4 h-full">
         <TouchableOpacity className="flex flex-row h-16 items-center gap-3 mb-4">
-          <View className="bg-gray-400 w-14 h-14 rounded-full">
+          <View className="bg-gray-400 w-14 h-14 rounded-full items-center justify-center">
             <Text>User</Text>
           </View>
           <View className="flex-1">
