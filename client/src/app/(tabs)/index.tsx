@@ -1,13 +1,15 @@
 import { ScrollView, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { MaterialIcons as Icon } from "@expo/vector-icons";
-import FiltroChat from "../../components/Chats/FiltroChat";
 import { useState } from "react";
+
+import FiltroChat from "../../components/Chats/FiltroChat";
+import BotaoAdicionar from "../../components/Chats/BotaoAdicionar";
 
 const Chats = () => {
   const [filtroSelecionado, setFiltroSelecionado] = useState(1);
 
   return (
-    <View className="p-5">
+    <View className="p-5 flex flex-col justify-end">
       {/* Header */}
       <View className="flex flex-row justify-between items-center">
         <Text className="text-green-400 font-bold text-4xl">Whatsapp</Text>
@@ -58,7 +60,8 @@ const Chats = () => {
         </TouchableOpacity>
       </View>
 
-      <ScrollView className="mt-4">
+      {/* Chats */}
+      <ScrollView className="mt-4 h-full">
         <TouchableOpacity className="flex flex-row h-16 items-center gap-3 mb-4">
           <View className="bg-gray-400 w-14 h-14 rounded-full">
             <Text>User</Text>
@@ -75,6 +78,9 @@ const Chats = () => {
           </View>
         </TouchableOpacity>
       </ScrollView>
+
+      {/* Botao add no canto */}
+      <BotaoAdicionar icone="add-box" />
     </View>
   );
 };
